@@ -1,32 +1,34 @@
-// const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=82451f49';
-
-// async function fetchMovieData() {
-// const movies = await fetch(url);
-// const moviesData = await movies.json();
-// console.log(moviesData);
-// }
+// http://www.omdbapi.com/?s=fast&apikey=82451f49
+// http://www.omdbapi.com/?i=tt3896198&apikey=82451f49
 
 
-// fetchMovieData();
+const url = 'http://www.omdbapi.com/?s=fast&apikey=82451f49';
 
-const url = 'https://imdb236.p.rapidapi.com/api/imdb/cast/nm0000190/titles';
-const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': '3fc5582ab1mshabbdc05d6787823p1eb946jsn085ff5d111ec',
-		'x-rapidapi-host': 'imdb236.p.rapidapi.com'
-	}
-};
-
-
-async function getData() {
- try {
-	const response = await fetch(url, options);
-	const result = await response.json();
-	console.log(result);
-} catch (error) {
-	console.error(error);
+async function fetchMovieData() {
+const movies = await fetch(url); 
+const moviesData = await movies.json();
+console.log(
+ moviesData.map(
+    (movie) => `<div class="movie">
+    <figure class="movie__img--wrapper">
+        <img src="https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__img">
+    </figure>
+    <div class="movie__title">
+        Guardians of the Galaxy Vol. 2
+    </div>
+    <div class="movie__director">
+        <span class="bold">Director:</span> James Gunn
+    </div>
+    <div class="movie__rated">
+        <span class="bold">Rated:</span> <i>PG-13</i>
+    </div>
+    <div class="movie__year">
+        <span class="bold">Released:</span> <i>2017</i>
+    </div>
+</div>`)
+);
 }
-}
 
-getData();
+
+fetchMovieData();
+
