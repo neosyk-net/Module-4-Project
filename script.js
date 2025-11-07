@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         searchButton.addEventListener('click', () => {
             if (ev.key === 'Enter') {
                 const query = (searchInput.value || '').trim();
-                fetchMovieData(query || 'fast');
+                fetchMovies(query || 'fast');
             }
         });
     }

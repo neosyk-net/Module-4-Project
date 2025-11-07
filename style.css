@@ -242,8 +242,112 @@ img {
 
 /* RESPONSIVENESS */
 
-
 @media screen and (max-width: 375px) {
+    input {
+        font-size:14px
+    }
+
+    .search-wrapper {
+        font-size: 20px;
+        padding: 0 10px 0 8px
+    }
+}
+
+@media(max-width: 450px) {
+
+}
+
+@media screen and (max-width: 500px) {
+    h1{
+        font-size:31px
+    }
+
+    input{
+        font-size: 16px
+    }
+}
+
+@media(max-width: 680px) {
+    .movie {
+        padding:0;
+        width: 100%;
+        margin-bottom: 60px
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .links {
+        display:none!important
+    }
+
+    #phone-nav {
+        display: block
+    }
+}
+
+@media(max-width: 1000px) {
+    .movie {
+        width:50%
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media screen and (max-width: 375px) {
     input{
         font-size: 14px;
     }
@@ -269,4 +373,4 @@ img {
     .movie {
         width: 50%;
     }
-}
+} */
