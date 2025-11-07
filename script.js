@@ -18,6 +18,7 @@ function renderMovies(list) {
             </figure>
             <div class="movie__title">
                 ${title}
+            </div>
             <div class="movie__year">
                 <span class="bold">Released:</span> <i>${year}</i>
             </div>
