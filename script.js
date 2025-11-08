@@ -1,7 +1,7 @@
 const apiKey = 'https://www.omdbapi.com/?apikey=82451f49';
 const movieContainer = document.getElementById('movies');
-const searchInput = document.getElementById('search-wrapper');
-const searchButton = document.querySelector('.fa-magnifying-glass');
+const searchInput = document.getElementById('.input-wrap, input');
+const searchButton = document.querySelector('.search-wrapper .fa-magnifying-glass');
 
 function renderMovies(list) {
     if (!movieContainer) return;
@@ -28,7 +28,7 @@ function renderMovies(list) {
     movieContainer.innerHTML = html;
 }
 
-async function fetchMovies(query = 'fast') {
+async function fetchMovies(query) {
     try {
         const response = await fetch(`${apiKey}&s=${encodeURIComponent(query)}`);
         const data = await response.json();
@@ -41,15 +41,22 @@ async function fetchMovies(query = 'fast') {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetchMovies('fast');
+    fetchMovies();
     if (searchButton) {
         searchButton.addEventListener('click', () => {
+                const q = (searchInput?.value || '').trim();
+                fetchMovies(q);
+            });
+        }
+
+    if (searchInput) {
+        searchInput.addEventListener('keyup', (ev) => {
             if (ev.key === 'Enter') {
-                const query = (searchInput.value || '').trim();
-                fetchMovies(query || 'fast');
-            }
-        });
-    }
+                const q = (searchInput.value || '').trim();
+                fetchMovies(q);
+        }
+    });
+}
 });
 
 
