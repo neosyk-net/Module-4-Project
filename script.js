@@ -1,6 +1,7 @@
 const apiKey = 'https://www.omdbapi.com/?apikey=82451f49';
 const movieContainer = document.getElementById('movies');
 const searchInput = document.getElementById('search-wrapper');
+const searchButton = document.querySelector('.fa-magnifying-glass');
 
 function renderMovies(list) {
     if (!movieContainer) return;
